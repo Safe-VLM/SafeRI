@@ -9,6 +9,10 @@ SafeRI is a recognition-and-intervention framework for intrinsic safety in large
 
 > **Code release:** The core implementation will be released immediately upon acceptance.
 
+## Release Plan
+
+The repository currently hosts the SafeRI project page. The core training and inference code, configuration files, and usage instructions will be published immediately upon acceptance.
+
 ## Highlights
 
 - **Streaming risk recognition:** a lightweight recognizer evaluates the current pre-token hidden state during autoregressive generation.
@@ -24,7 +28,6 @@ SafeRI couples two components throughout decoding:
 2. **Intervention** activates a boundary-aligned LoRA module for a renewable window, redirecting the continuation toward a safe response.
 
 When risk subsides, the gate closes and generation returns to the frozen-backbone policy. The intervention module is trained using unsafe prefixes, transition statements, and safe continuations.
-
 ## Results
 
 | Backbone | Setting | Safety Avg. ↑ | General Avg. ↑ | Safety Δ |
@@ -39,11 +42,6 @@ When risk subsides, the gate closes and generation returns to the frozen-backbon
 | Llama3.2-Vision-11B | **SafeRI** | **84.27** | 58.93 | **+0.78** |
 
 Safety Avg. is the arithmetic mean over SPA-VL-test harm, AdvBench, HADES, XSTest, and MSSBench. General Avg. is averaged over MMBench, MM-Vet, and BLINK. Please refer to the paper for full experimental settings, baseline comparisons, and ablations.
-
-## Release Plan
-
-The repository currently hosts the SafeRI project page. The core training and inference code, configuration files, and usage instructions will be published immediately upon acceptance.
-
 ## Citation
 
 ```bibtex
